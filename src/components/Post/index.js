@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { PostHeader } from './PostHeader';
-import styles from './Post.scss'
+import { Likes, Subtitle, Container } from './styles';
 
 export const Post = (props) => {
-  const { onRemove } = props;
+  const { onRemove, onRead } = props;
   const { likes, id, title, subtitle, read, removed } = props.post
   return (
     <>
-      <article className={removed ? styles.postDeleted : styles.post}>
-        <PostHeader onRemove={onRemove}
+      <Container removed={removed}>
+        <PostHeader onRemove={onRemove} onRead={onRead}
           post={{
             id:id,
             title:title,
@@ -18,11 +18,9 @@ export const Post = (props) => {
           id={id} />
         {/* <strong>{read ? <s>{title}</s> : title}</strong>
         <button onClick={() => onRemove(id)}>Remove</button> */}
-        <br />
-        <small>{subtitle}</small>
-        <br />
-        Likes:{likes}
-      </article>
+        <Subtitle>{subtitle}</Subtitle>
+       <Likes>Likes:{likes}</Likes>
+      </Container>
       <br />
     </>
   );

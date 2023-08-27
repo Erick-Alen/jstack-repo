@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { ThemeContext } from './ThemeContext'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 
 
 export default function Button(props) {

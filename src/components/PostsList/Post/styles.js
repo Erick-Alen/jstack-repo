@@ -1,21 +1,20 @@
 import styled from 'styled-components';
-
 export const Container = styled.article`
-  background: #333;
+  background: ${props => props.theme.postBackgroundColor};
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  border-radius: 10px;
+  padding: ${props => props.theme.spacing.medium};
+  border-radius: ${props => props.theme.borderRadius};
 
   h2 {
-    margin: 0 0 8px;
+    margin: ${props => props.theme.margin};
   }
 
   small {
-    opacity: 0.7;
+    opacity: ${props => props.theme.opacity};
   }
 
   & + article {
-    margin-top: 8px;
+    margin-top: ${props => props.theme.marginTop.small};
   }
 `;

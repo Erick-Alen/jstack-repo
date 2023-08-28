@@ -2,7 +2,8 @@ import commonStyles from './common';
 
 export default {
   ...commonStyles,
-  backgroundColor: '#fff',
+  backgroundColor: '#eee',
+  navBackgroundColor: '#aaa',
+  postBackgroundColor: '#ddd',
   textColor: '#222',
 };
-

@@ -7,17 +7,17 @@ import themes from './styles/themes';
 
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
 
-  const firstRender = useRef(true)
+  // const firstRender = useRef(true)
 
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-      return;
-    }
-    console.log('rendered')
-  }, [theme])
+  // useEffect(() => {
+  //   if (firstRender.current) {
+  //     firstRender.current = false
+  //     return;
+  //   }
+  //   console.log('rendered')
+  // }, [theme])
 
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.dark
@@ -25,6 +25,7 @@ function App() {
 
   const handleToggleTheme = () => {
     setTheme(theme => theme === 'dark' ? 'light' : 'dark')
+    localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark')
   }
 
   return (

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
+  position: absolute;
+  bottom: 0;
   background: ${props=>props.theme.navBackgroundColor};
   height: 70px;
   display: flex;
